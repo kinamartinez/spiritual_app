@@ -1,0 +1,173 @@
+<div class="container main-container">
+
+    <div class="row profile">
+
+        <div class="col-md-3">
+            <div class="profile-sidebar">
+                <!-- SIDEBAR USERPIC -->
+                <div class="profile-userpic">
+                    <img class="img-responsive" alt="" ng-src="{{cook.cookPic}}">
+                </div>
+                <!-- END SIDEBAR USERPIC -->
+
+                <!-- SIDEBAR USER TITLE -->
+                <div class="profile-usertitle">
+                    <div class="profile-usertitle-name">
+                        {{cook.fullname}}
+                    </div>
+                    <div ng-repeat="food in user.foods track by $index" class="profile-usertitle-job">
+                        Type of Food: {{food.dish}}
+                    </div>
+                </div>
+                <!-- END SIDEBAR USER TITLE -->
+                <!-- SIDEBAR BUTTONS -->
+
+                <div class="profile-userbuttons">
+                    <p>{{cook.descrip}}</p>
+                    <p><strong> Phone Number: </strong>+972 ({{cook.phoneNumber}})</p>
+                    <p><strong> ({{cook.place}}) </strong></p>
+                    <p><strong> e-mail: {{cook.email}}</strong></p>
+
+                    <button ng-show="currentUser" type="button" ng-click="upvote(cook._id)"
+                            class="btn btn-success btn-sm glyphicon glyphicon-thumbs-up"> {{cook.upvotes}}
+                    </button>
+                    <button ng-show="currentUser" type="button" ng-click="downvote(cook._id)"
+                            class="btn btn-danger btn-sm glyphicon glyphicon-thumbs-down"> {{cook.downvotes}}
+                    </button>
+                    <button ng-show="!currentUser" type="button"
+                            class="btn btn-success btn-sm glyphicon glyphicon-thumbs-up"> {{cook.upvotes}}
+                    </button>
+                    <button ng-show="!currentUser" type="button"
+                            class="btn btn-danger btn-sm glyphicon glyphicon-thumbs-down"> {{cook.downvotes}}
+                    </button>
+                    <br/>
+                    <br/>
+                    <strong><a ng-show="currentUser" href="#reviewInput"> Leave a Review </a></strong>
+
+                </div>
+                <!-- END SIDEBAR BUTTONS -->
+                <!-- END MENU -->
+            </div>
+
+        </div>
+
+        <div class="col-md-9">
+
+            <div class="profile-content">
+                <div class="row-fluid">
+
+
+                    <!--***************CAROUSEL****************************-->
+                    <div class="col-sm-12">
+                        <div id="slides_control">
+                            <div>
+                                <div class="container col-md-12">
+                                    <!--<h2>MEALS</h2>-->
+                                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                        <!-- Indicators -->
+                                        <ol class="carousel-indicators">
+                                            <li data-target="#myCarousel" data-slide-to="{{$index}}"
+                                                ng-repeat="food in cook.foods track by $index"></li>
+
+                                        </ol>
+
+                                        <!-- Wrapper for slides -->
+                                        <div class="carousel-inner">
+
+                                            <div class="item" ng-class="{active:!$index}"
+                                                 ng-repeat="food in cook.foods track by $index">
+                                                <img ng-src="{{food.img}}"
+                                                     alt="Los Angeles" style="width:500px; height:300px">
+
+                                                <div class="carousel-caption">
+                                                    <h4>{{food.dish}}</h4>
+                                                    <p class="desc">"{{food.description}}"</p>
+                                                    <span class="badge pull-center"><i class="fa fa-credit-card"
+                                                                                       aria-hidden="true"></i> <strong> Price: {{food.price}} NIS </strong> </span>
+                                                    <span class="badge"><i class="fa fa-clock-o"
+                                                                           aria-hidden="true"></i> {{food.availability}}</span>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!--Left and right controls-->
+                                        <a class="left carousel-control" href="#myCarousel"
+                                           data-slide="prev">
+                                            <span class="glyphicon glyphicon-chevron-left"></span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="right carousel-control" href="#myCarousel"
+                                           data-slide="next">
+                                            <span class="glyphicon glyphicon-chevron-right"></span>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </div>
+                                    <a href="/#/orderForm">
+                                        <button class="btn btn-danger col-md-12" type="button">
+                                            <i class="fa fa-credit-card"
+                                               aria-hidden="true"></i>
+                                            Place Order
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--**********************************FIN DEL CAROUSEL*************************-->
+                    <ul class="pager pull-left">
+                        <li><a ui-sref="map.list">Back to the map</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="col-md-12 profile-content">
+                <h2>REVIEWS</h2>
+
+                <!-- SIDEBAR MENU -->
+
+
+                <div ng-repeat="rev in cook.reviews track by $index" class="panel panel-default">
+
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{rev.author}}</h3>
+
+                    </div>
+                    <!--/panel-heading-->
+
+
+                    <div class="panel-body">
+                        <br>
+                        {{rev.text}}
+
+
+                        <i ng-click="deleteReview(rev._id)"
+                           class="fa fa-trash pull-right"
+                           aria-hidden="true" role="button"></i>
+                    </div>
+                </div><!--/panel-footer-->
+                <a name="reviewInput"></a>
+                <div class="profile-usermenu">
+                    <form ng-show="currentUser">
+                        <h3 class="reevieews">Add a review</h3>
+                        <div class="input-group">
+                            <input type="text" class="form-control" ng-model="review.text" placeholder="Add review...">
+                            <span class="input-group-btn">
+                        <button class="btn btn-info" type="button" ng-click="addReview(review)">Submit</button>
+                        </span>
+                        </div>
+                    </form>
+
+                    <br>
+                </div>
+
+            </div><!--/panel-->
+
+        </div>
+    </div>
+</div>
+
+
+<br>

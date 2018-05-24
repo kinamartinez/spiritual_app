@@ -1,0 +1,200 @@
+<div class="container main-container">
+    <div class="row profile">
+        <div class="col-md-3">
+            <div class="profile-sidebar">
+                <!-- SIDEBAR USERPIC -->
+                <div class="profile-userpic">
+                    <img class="img-responsive" alt="" ng-src="{{cook.cookPic}}">
+                </div>
+                <!-- END SIDEBAR USERPIC -->
+
+                <!-- SIDEBAR USER TITLE -->
+                <div class="profile-usertitle">
+                    <div class="profile-usertitle-name">
+                        {{cook.fullname}}
+                    </div>
+                    <div ng-repeat="food in user.foods track by $index" class="profile-usertitle-job">
+                        Type of Food: {{food.dish}}
+                    </div>
+                </div>
+                <!-- END SIDEBAR USER TITLE -->
+                <!-- SIDEBAR BUTTONS -->
+
+                <div class="profile-userbuttons">
+                    <p>{{cook.descrip}}</p>
+                    <p><strong> Phone Number: </strong>+972 ({{cook.phoneNumber}})</p>
+                    <p><strong> ({{cook.place}}) </strong></p>
+                    <p><strong> e-mail: {{cook.email}}</strong></p>
+
+                    <button type="button" ng-click="upvote(cook._id)"
+                            class="btn btn-success btn-sm glyphicon glyphicon-thumbs-up"> {{cook.upvotes}}
+                    </button>
+                    <button type="button" ng-click="downvote(cook._id)"
+                            class="btn btn-danger btn-sm glyphicon glyphicon-thumbs-down"> {{cook.downvotes}}
+                    </button>
+                    <br/>
+                    <br/>
+                    <strong><a ng-show="currentUser" href="#reviewInput"> Leave a Review </a></strong>
+
+                </div>
+
+                <!-- END SIDEBAR BUTTONS -->
+
+                <!-- END MENU -->
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="profile-content">
+                <div class="row-fluid">
+                    <div class="col-sm-12">
+
+
+                        <!--***************CAROUSEL****************************-->
+                        <div class="col-sm-12">
+                            <div id="slides_control">
+                                <div>
+                                    <div interval="myInterval" active="activeSlide">
+                                        <div ng-repeat="food in cook.foods track by $index" index="$index">
+
+                                            <!--&lt;!&ndash;************************ DISEÑO 1******************&ndash;&gt;-->
+                                            <!--<uib-carousel interval="myInterval" active="activeSlide">-->
+                                            <!--<uib-slide ng-repeat="food in cook.foods track by $index" index="$index">-->
+                                            <!--&lt;!&ndash;<div class="rightCol1 ">&ndash;&gt;-->
+
+                                            <!--&lt;!&ndash;<div class="theBox2">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<a href="/#/orderForm">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<img src="{{food.img}}" style="width:350px; height:250px">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="txtBox2">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<h4>{{food.dish}}</h4>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<h5>"{{food.description}}!!"</h5>&ndash;&gt;-->
+
+                                            <!--&lt;!&ndash;<br> {{food.options}}&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<br> <span class="badge"><i class="fa fa-clock-o"&ndash;&gt;-->
+                                            <!--&lt;!&ndash;aria-hidden="true"></i>  </span>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;{{food.availability}}&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<br> <span class="badge"><i class="fa fa-credit-card"&ndash;&gt;-->
+                                            <!--&lt;!&ndash;aria-hidden="true"></i>  </span><strong>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;Price: </strong> {{food.price}} NIS&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<button class="btn btn-danger pull-right" type="button">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<i class="fa fa-credit-card"&ndash;&gt;-->
+                                            <!--&lt;!&ndash;aria-hidden="true"></i>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;Start Order&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</button>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+
+                                            <!--&lt;!&ndash;</a>&ndash;&gt;-->
+
+
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+                                            <!--&lt;!&ndash;*********************DISEÑO 2************************************&ndash;&gt;-->
+                                            <a href="/#/orderForm"> <img ng-src="{{food.img}}"
+                                                                         style="width:400px; height:250px"/>
+                                                <button class="btn btn-danger pull-right" type="button">
+                                                    <i class="fa fa-credit-card"
+                                                       aria-hidden="true"></i>
+                                                    Place Order
+                                                </button>
+                                            </a>
+                                            <div class="well">
+                                                <h4>{{food.dish}}</h4>
+                                                "{{food.description}}!!"
+                                                <br> <span class="badge">{{food.options}}</span>
+                                                <span class="badge pull-center"><i class="fa fa-credit-card"
+                                                                                   aria-hidden="true"></i> <strong> Price: {{food.price}} NIS </strong> </span>
+                                                <br> <span class="badge"><i class="fa fa-clock-o"
+                                                                            aria-hidden="true"></i> {{food.availability}}</span>
+                                                <br>
+
+                                                <div class="carousel-caption">
+                                                    <h4 class="hidden">{{$index+1}}</h4>
+                                                </div>
+                                            </div>
+                                            ******* fin diseño 2
+                                            </uib-slide>
+                                            </uib-carousel>
+                                            <!--&lt;!&ndash;*************************FIN DEL CARRUSEL*************************&ndash;&gt;-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--****************************FIN DEL CAROUSEL******************************-->
+
+                        <!--<div>-->
+                        <!--<div class="rightCol1 ">-->
+
+                        <!--<div ng-repeat="food in cook.foods track by $index" class="theBox2">-->
+                        <!--<a href="/#/orderForm">-->
+                        <!--<img src="{{food.img}}" style="width:350px; height:250px">-->
+                        <!--<div class="txtBox2">-->
+                        <!--<h4>{{food.dish}}</h4>-->
+                        <!--<h5>"{{food.description}}!!"</h5>-->
+
+                        <!--<br> {{food.options}}-->
+                        <!--<br> <span class="badge"><i class="fa fa-clock-o" aria-hidden="true"></i>  </span>-->
+                        <!--{{food.availability}}-->
+                        <!--<br> <span class="badge"><i class="fa fa-credit-card"-->
+                        <!--aria-hidden="true"></i>  </span><strong>-->
+                        <!--Price: </strong> {{food.price}} NIS-->
+                        <!--<button class="btn btn-danger pull-right" type="button">-->
+                        <!--<i class="fa fa-credit-card"-->
+                        <!--aria-hidden="true"></i>-->
+                        <!--Start Order-->
+                        <!--</button>-->
+                        <!--</div>-->
+
+
+                        <!--</a>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 profile-content">
+                <!-- SIDEBAR MENU -->
+
+
+                <div ng-repeat="rev in cook.reviews track by $index" class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{rev.author}}</h3>
+
+                    </div>
+                    <!--/panel-heading-->
+
+
+                    <div class="panel-body">
+                        <br>
+                        {{rev.text}}
+
+
+                        <i ng-click="deleteReview(rev._id)"
+                           class="fa fa-trash pull-right"
+                           aria-hidden="true" role="button"></i>
+                    </div>
+                </div><!--/panel-footer-->
+                <a name="reviewInput"></a>
+                <div class="profile-usermenu">
+                    <form ng-show="currentUser">
+                        <h3 class="reevieews">Add a review</h3>
+                        <div class="input-group">
+                            <input type="text" class="form-control" ng-model="review.text" placeholder="Add review...">
+                            <span class="input-group-btn">
+                        <button class="btn btn-info" type="button" ng-click="addReview(review)">Submit</button>
+                        </span>
+                        </div>
+                    </form>
+
+                    <br>
+                </div>
+            </div><!--/panel-->
+        </div>
+    </div>
+</div>
+
+
+<br>

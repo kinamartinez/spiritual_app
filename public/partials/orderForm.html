@@ -1,0 +1,86 @@
+<head lang="en">
+    <meta charset="UTF-8">
+    <title> Online Food Delivery Form </title>
+
+
+    <script>
+        function finalCost(){
+            var foodItem = document.getElementById("food_item").value;
+            var specialItemm = document.getElementById("special_item").value;
+            var foodQuatity = document.getElementById("food_quantity").value;
+            var deliveryType = document.getElementById("delivery_type").value;
+            var deliveryArea = document.getElementById("delivery_area").value;
+
+            var all_food = (parseInt(foodItem)*1) + (parseInt(specialItemm)*3) + ((foodQuatity)*2) + (parseInt(deliveryType)*4) + (parseInt(deliveryArea)*3)
+            document.getElementById("result").innerHTML = all_food;
+        }
+        function ok_result(){
+            document.getElementById("okResult").style.display="block";
+            document.getElementById("okResult").style.backgroundColor="#1FCECB";
+            document.getElementById("input_box").style.display="none";
+        }
+    </script>
+
+</head>
+<body>
+<div class="online_food_delivery_box animated bounceInDown" id="input_box">
+    <h3> Online Food Delivery Form </h3><br>
+    <form>
+        <div class="form-group">
+            <select class="form-control" id="food_item" onchange="finalCost()">
+                <option value="0"> Select Food Item ... </option>
+                <option value="30"> Green Thai Curry </option>
+                <option value="30"> Maki Sushi </option>
+                <option value="30"> Tacos  </option>
+                <option value="30"> Ethiopian Injera </option>
+                <option value="30"> Cutlet Beef  </option>
+                <option value="30"> Empanadas Argentinas  </option>
+                <option value="30"> Thai Beef With Ginger </option>
+            </select>
+        </div>
+        <div class="form-group">
+            <select class="form-control" id="special_item" onchange="finalCost()">
+                <option value="0"> Sustainable Container?</option>
+                <option value="2"> Yes </option>
+                <option value="0"> No </option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="number" class="form-control" id="food_quantity" placeholder="Quantity" onkeyup="finalCost()" >
+        </div>
+        <div class="form-group">
+            <select class="form-control" id="delivery_type" onchange="finalCost()">
+                <option value="0"> Delivery Type - </option>
+                <option value="0"> Normal </option>
+                <option value="2"> Emergency </option>
+            </select>
+        </div>
+        <div class="form-group">
+            <select class="form-control" id="delivery_area" onchange="finalCost()">
+                <option value="0"> Select Delivery Area ... </option>
+                <option value="1"> South of the City</option>
+                <option value="2"> Central of the City</option>
+                <option value="3"> North of the City </option>
+                <option value="4"> East of the City</option>
+                <option value="5"> West of the City</option>
+
+            </select>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Address ...">
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <!--<label>Total Cost ($) : </label>-->
+            <!--<span id="result" style="background-color: #8c7269;color: #fff;padding: 6px 70px;font-weight: 600;font-size: 18px; margin-left: 10px;border-radius: 5px;">0</span>-->
+            <a href='https://www.paypal.com/signin?country.x=IL&locale.x=en_IL'><input type="button" value="SUBMIT" class="btn btn-primary" style="float: right" id="ok" ></a>
+        </div>
+    </form>
+</div>
+
+<div class="result_box animated zoomIn" style="display: none;" id="okResult">
+    <h3 class="result_box_text" id="ok_text">Thank You!! To complete your order please click here! <br><br></h3><br>
+    <input type="button" class="btn btn-primary" style="float: right" onclick="location.href = 'https://www.paypal.com/signin?country.x=IL&locale.x=en_IL';">
+</div>
+
+</body>

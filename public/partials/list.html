@@ -1,0 +1,63 @@
+<!---->
+<div class="col-md-5 pull-right">
+    <!-- Creates Main Panel -->
+    <div class="panel panel-default">
+        <!-- Panel Title -->
+        <div class="panel-heading">
+            <h2 class="panel-title text-center">What do you feel like eating today? <span></span></h2>
+        </div>
+        <!-- Panel Body -->
+        <div class="panel-body modal-open">
+            <!-- Creates Form (novalidate disables HTML validation, Angular will control) -->
+            <form name="addForm ">
+
+                <div ng-repeat="user in users  track by $index" class="media">
+                    <div ng-if="user.cook == true" class="form-group  pic well">
+
+
+                        <div class="media-object">
+
+                            <a ui-sref="profile({id:user._id})"><h3 class="media-left">
+                                <strong>{{user.username}}</strong></h3></a>
+
+                            <img class="media-object fotos" ng-src="{{user.foods[0].img}}"
+                                 style="width:365px; height:250px" alt="..."/>
+                            <div class="media-body">
+
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                            <span class="badge"><i class="fa fa-cutlery"
+                                                                   aria-hidden="true"></i>  </span>
+                                        <strong> Type of food:</strong> {{user.foods[0].dish}}
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span class="badge"><i class="fa fa-clock-o" aria-hidden="true"></i>  </span>
+                                        <strong> Availability:</strong> {{user.foods[0].availability}}
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span class="badge"><i class="fa fa-pencil" aria-hidden="true"></i>  </span>
+                                        <strong> </strong> "{{user.foods[0].description}}"
+                                    </li>
+                                    <li class="list-group-item">
+                                            <span class="badge"><i class="fa fa-envelope-o"
+                                                                   aria-hidden="true"></i>  </span>
+                                        <strong> Mail:</strong> {{user.email}}
+                                    </li>
+                                    <!--<li class="list-group-item">-->
+                                    <!--&lt;!&ndash;<a href="/#/orderForm">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<button class="btn btn-danger" type="button"><i&ndash;&gt;-->
+                                    <!--&lt;!&ndash;class="fa fa-credit-card"&ndash;&gt;-->
+                                    <!--&lt;!&ndash;aria-hidden="true"></i>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;Start Order&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</button>&ndash;&gt;-->
+                                    <!--</a>-->
+                                    <!--</li>-->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

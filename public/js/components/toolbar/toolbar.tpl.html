@@ -1,0 +1,29 @@
+<md-toolbar>
+    <div class="md-toolbar-tools">
+        <nav id="header" class="navbar navbar-fixed-top">
+            <div id="header-container" class="container navbar-container">
+                <div class="navbar-header">
+                    <button type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                            aria-controls="navbar" class="navbar-toggle collapsed"><span
+                            class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
+                            class="icon-bar"></span><span
+                            class="icon-bar"></span></button>
+                    <a id="brand" href="/" class="navbar-brand">The Home Cook</a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="false"><a ui-sref="menu">Food Menu</a></li>
+                        <li active><a ui-sref="join">Join the Team</a></li>
+                        <li disabled><a ui-sref="find">Find Some Cooks</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <md-button>login</md-button>
+                        <md-button>profile</md-button>
+                        <md-button>logout</md-button>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</md-toolbar>

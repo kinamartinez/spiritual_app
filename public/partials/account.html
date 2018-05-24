@@ -1,0 +1,108 @@
+<!--******************* WORK IN PROGRESS*****************************-->
+<div class="container main-container">
+    <h3 class="text-center">Profile Information</h3>
+    <form class="form-horizontal" action="/account/updateProfile" method="POST">
+        <input type="hidden" name="_csrf">
+        <div class="form-group">
+
+            <div class="col-sm-7">
+                <input class="form-control" type="hidden" name="_id" id="_id" ng-model='user._id'>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="email"> Email</label>
+            <div class="col-sm-7">
+                <input class="form-control" type="email" name="email" id="email" ng-model='user.email'>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="fullname"> Full Name</label>
+            <div class="col-sm-7">
+                <input class="form-control" type="text" name="fullname" id="fullname" ng-model='user.fullname'>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="username"> Username</label>
+            <div class="col-sm-7">
+                <input class="form-control" type="text" name="username" id="username" ng-model='user.username'>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="place"> Location</label>
+            <div class="col-sm-7">
+                <input class="form-control" type="text" name="place" id="place" ng-model="user.place">
+                <div class="form-group"></div>
+            </div>
+            <label class="col-sm-3 control-label" for="phoneNumber"> Phone number</label>
+            <div class="col-sm-7">
+                <input class="form-control" type="number" name="phoneNumber" id="phoneNumber" ng-model="user.phoneNumber">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="image"> Profile Picture (url)</label>
+            <div class="col-sm-7">
+                <input class="form-control" type="url" name="image" id="image" ng-model="user.cookPic">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="descrip"> A short description of yourself</label>
+            <div class="col-sm-7">
+                <input class="form-control" type="text" name="descrip" id="descrip" ng-model="user.descrip">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-4">
+                <button class="btn btn btn-primary"  type="submit"><i class="fa fa-pencil"></i> Update Profile</button>
+            </div>
+        </div>
+    </form>
+    <div class="page-header" ng-show="user.cook">
+        <a ui-sref="account.addFood">
+            <h3 class="text-center">Add food</h3>
+        </a>
+        <ui-view></ui-view>
+    </div>
+    <div class="page-header">
+        <h3 class="text-center">Change Password</h3>
+    </div>
+    <form class="form-horizontal" action="/account/password" method="POST">
+        <input type="hidden" name="_csrf">
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="password"> New Password</label>
+            <div class="col-sm-7">
+                <input class="form-control" type="password" name="password" id="password">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="confirmPassword"> Confirm Password</label>
+            <div class="col-sm-7">
+                <input class="form-control" type="password" name="confirmPassword" id="confirmPassword">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-4">
+                <button class="btn btn-primary" type="submit"><i class="fa fa-lock"></i> Change Password</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="page-header">
+        <h3 class="text-center">Delete Account</h3>
+    </div>
+    <form class="form-horizontal" action="/account/delete" method="POST">
+        <div class="form-group">
+            <h5 class="col-sm-offset-3 col-sm-10">You can delete your account, but keep in mind this action is irreversible.</h5>
+            <input type="hidden" name="_csrf">
+            <div class="col-sm-offset-3 col-sm-4">
+                <br/>
+                <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i> Delete my account</button>
+            </div>
+        </div>
+    </form>
+    <div class="page-header">
+        <h3 class="text-center"></h3>
+    </div>
+    <div class="form-horizontal"></div>
+</div>

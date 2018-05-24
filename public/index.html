@@ -1,0 +1,116 @@
+<!doctype html>
+<!-- Declares meanMapApp as the starting Angular module -->
+<html class="no-js" ng-app="meanMapApp">
+
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+    <title>Home Cooks</title>
+    <meta name="description" content="Home Cooked Meals">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <!-- CSS -->
+    <script src="https://code.jquery.com/jquery-2.1.4.js" data-require="jquery@*" data-semver="2.1.4"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet"
+          type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="navbarStyle.css"/>
+
+    <!-- Holder JS -->
+    <script src="../bower_components/holderjs/holder.js"></script>
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARNSOYROPJTbzUN5bAgOPZ9fL_DkuPhIo"></script>
+
+
+</head>
+
+<body ng-controller="masterController">
+<nav id="header" class="navbar navbar-fixed-top">
+    <div id="header-container" class="container navbar-container">
+        <div class="navbar-header">
+            <button type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                    aria-controls="navbar" class="navbar-toggle collapsed"><span
+                    class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
+                    class="icon-bar"></span><span
+                    class="icon-bar"></span></button>
+
+
+            <strong><a id="brand" href="/" class="navbar-brand">The Home Cook</a></strong>
+
+            <ul class="nav navbar-nav navbar-left" ng-hide='currentUser'>
+                <li class="navbar-text"><a ui-sref="map.find" ng-show='currentUser'>Whats Cooking</a></li>
+
+            </ul>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right" ng-show='currentUser'>
+            <li class="navbar-text"><a ui-sref="account">Welcome {{currentUser}} !</a></li>
+            <li class="navbar-text"><a target="_self" href="/users/logout">Logout</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-left" ng-show='currentUser'>
+            <li><a ui-sref="map.list">What's on the menu?</a></li>
+            <li><a ui-sref="map.find">Find some cooks</a></li>
+            <li><a ui-sref="aboutUs">About</a></li>
+        </ul>
+
+
+        <ul class="nav navbar-nav navbar-right" ng-hide='currentUser'>
+            <li><a ui-sref="aboutUs">About</a></li>
+            <li><a ui-sref="map.list">What's on the menu?</a></li>
+            <li><a ui-sref="map.find">Find some cooks</a></li>
+            <li><a ui-sref="map.join">Join the Cooking Team</a></li>
+            <li><a ui-sref="login">Login</a></li>
+            <li><a ui-sref="register" class="navbar-reg"> Register </a></li>
+
+
+        </ul>
+
+    </div>
+
+</nav>
+
+
+<ui-view></ui-view>
+
+
+<!-- Angular Scripts -->
+<!-- JS Source -->
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/angular-route/angular-route.js"></script>
+<script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="../bower_components/angularjs-geolocation/dist/angularjs-geolocation.min.js"></script>
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+
+<script src="js/app.js"></script>
+<script src="js/addCtrl.js"></script>
+<script src="js/gservice.js"></script>
+<script src="js/queryCtrl.js"></script>
+<script src="js/authCtrl.js"></script>
+<script src="js/accountCtrl.js"></script>
+<script src="js/authFactory.js"></script>
+<script src="js/masterController.js"></script>
+<script src="js/foodController.js"></script>
+<script src="js/reviewController.js"></script>
+<script src="js/reviewFactory.js"></script>
+<script src="js/navbarFunc.js"></script>
+
+
+</body>
+
+</html>

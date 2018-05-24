@@ -1,0 +1,51 @@
+<div class="container">
+    <form class="form-horizontal" action="account/addfood" method="POST">
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="dish">Food</label>
+            <div class="col-sm-7">
+                <input class="form-control" type="text" name="dish" id="dish" ng-model='Food.dish'>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="description">Description</label>
+            <div class="col-sm-7">
+                <input class="form-control" type="text" name="description" id="description" ng-model='Food.description'>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="price">Price</label>
+            <div class="col-sm-7">
+                <input class="form-control" type="text" name="price" id="price" ng-model='Food.price'>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="type">Cuisine</label>
+            <div class="col-sm-7">
+                <input class="form-control" type="text" name="type" id="type" ng-model='Food.type'>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="img">Food Picture</label>
+            <div class="col-sm-7">
+                <input class="form-control" type="text" name="img" id="img" ng-model='Food.img'>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="options">Diet Restrictions</label>
+            <div class="col-sm-7">
+                <input class="form-control" type="text" name="options" id="options" ng-model='Food.options'>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="availability">Availability</label>
+            <div class="col-sm-7">
+                <input class="form-control" type="text" name="availability" id="availability" ng-model='Food.availability'>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-4">
+                <button class="btn btn btn-primary" type="submit"><i class="fa fa-pencil"></i>Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
