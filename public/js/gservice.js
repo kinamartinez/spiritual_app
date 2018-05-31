@@ -80,7 +80,7 @@ angular.module('gservice', [])
 
             // Loop through all of the JSON entries provided
             // as response of call to API
-            console.log(response);
+            console.log('RESPONSE IN THE MAP',response);
             for (let i = 0; i < response.length; i++) {
 
                 const user = response[i];

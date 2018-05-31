@@ -5,6 +5,7 @@ var app = angular.module('meanMapApp', [
     'queryCtrl',
     'geolocation',
     'gservice',
+    'gTrackService',
 
 ]);
 
@@ -63,13 +64,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$provi
             })
 
 
-            .state('orderForm', {
-                url: '/orderForm',
-                controller: 'foodController',
-                templateUrl: 'partials/orderForm.html',
 
-                // All else forward to the Join Home Cook Team Control Panel
-            })
             .state('home', {
                 url: '/home',
                 templateUrl: 'js/components/home/home.tpl.html',
@@ -92,6 +87,8 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$provi
                 templateUrl: 'partials/map.html',
                 controller: 'queryCtrl',
             })
+
+
             .state('map.find', {
                 url: '/find',
                 templateUrl: 'partials/queryForm.html',
