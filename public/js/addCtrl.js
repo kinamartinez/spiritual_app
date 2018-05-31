@@ -10,8 +10,8 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
     // ----------------------------------------------------------------------------
     $scope.formData = {};
     let coords = {};
-    let lat = 0;
-    let long = 0;
+    const lat = 0;
+    const long = 0;
 
    // Set initial coordinates to the center of the Israel
     $scope.formData.latitude = 32.074466;
@@ -53,12 +53,12 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
     // Creates a new user based on the form fields
     $scope.createUser = function() {
         // Grabs all of the text box fields
-        var userData = {
+        const userData = {
             username: $scope.formData.username,
             fullname: $scope.formData.fullname,
             email: $scope.formData.email,
             location: [$scope.formData.longitude, $scope.formData.latitude],
-            htmlverified: $scope.formData.htmlverified
+            htmlverified: $scope.formData.htmlverified,
         };
 
         // Saves the user data to the db
