@@ -46,8 +46,8 @@ router.post('/:userid', (req, res, next) => {
     let newReview = new Review(req.body);
 
     const cooksid = req.params.userid;
-    // console.log("**************************");
-    // console.log(req.body.cooksid);
+    console.log("**************************");
+    console.log(req.body);
     //const errors = req.validationErrors();
 
     User.findById(cooksid)
