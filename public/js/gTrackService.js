@@ -63,7 +63,7 @@ angular.module('gTrackService', [])
                     // For each route, display summary information.
                     for (let i = 0; i < route.legs.length; i++) {
                         const routeSegment = i + 1;
-                        summaryPanel.innerHTML += '<b>Route Segment: ' + routeSegment +
+                        summaryPanel.innerHTML += '<b>Journey Segment: ' + routeSegment +
                             '</b><br>';
                         summaryPanel.innerHTML += route.legs[i].start_address + ' to ';
                         summaryPanel.innerHTML += route.legs[i].end_address + '<br>';

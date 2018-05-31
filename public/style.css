@@ -358,7 +358,10 @@ body {
 .profile-content {
     padding: 20px;
     background: #fff;
-    min-height: 460px;
+    /*min-height: 460px;*/
+}
+.story-text{
+    padding-top: 17px;
 }
 
 .home-btn{
@@ -460,4 +463,10 @@ img{
     vertical-align: middle;
     color: white;
     font-weight: bold;
+}
+
+#directions-panel{
+    background-color: white;
+    padding: 15px;
+    min-width: 600px;
 }

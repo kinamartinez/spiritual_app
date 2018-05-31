@@ -31,6 +31,9 @@
                     <strong><a ng-show="currentUser" href="#reviewInput"> Leave a comment </a></strong>
 
                 </div>
+                <ul class="pager">
+                    <li><a ui-sref="map.list">See more journeys</a></li>
+                </ul>
                 <!-- END SIDEBAR BUTTONS -->
                 <!-- END MENU -->
             </div>
@@ -38,10 +41,8 @@
         </div>
 
         <div class="col-md-6 col-md-6">
-            <ul class="pager pull-left">
-                <li><a ui-sref="map.list">Back to the map</a></li>
-            </ul>
-            <div class="profile-content">
+
+            <div class="row profile-content">
                 <div class="row-fluid">
 
                     <div class="col-sm-12">
@@ -50,12 +51,9 @@
                             <div>
                                 <img class="img-responsive" alt="" ng-src="{{story.img}}">
                             </div>
-                            <div>{{story.price}}</div>
+                            <div class="story-text">{{story.price}}</div>
                         </div>
-
-
                     </div>
-
                 </div>
             </div>
             <hr class="dividerProfile">
@@ -63,8 +61,6 @@
                     <h3>Comments</h3>
 
                     <!-- SIDEBAR MENU -->
-
-
                     <div ng-repeat="rev in cook.reviews track by $index" class="panel panel-default">
 
                         <div class="panel-heading">
@@ -72,7 +68,6 @@
 
                         </div>
                         <!--/panel-heading-->
-
 
                         <div class="panel-body">
                             <br>
@@ -107,7 +102,7 @@
 
         <!--MAP TRACKING ROUTE-->
         <div class="col-md-4 col-md-4">
-            <div id="mapTrack" style="width:600px; height:600px"></div>
+            <div id="mapTrack" style="min-width:600px; min-height:600px"></div>
             <div id="directions-panel"></div>
         </div>
 
