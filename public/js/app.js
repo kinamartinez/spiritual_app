@@ -58,18 +58,9 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$provi
                             return theWholeUserObj.data;
                         })
                     }]
-
                 }
             })
 
-
-            .state('orderForm', {
-                url: '/orderForm',
-                controller: 'foodController',
-                templateUrl: 'partials/orderForm.html',
-
-                // All else forward to the Join Home Cook Team Control Panel
-            })
             .state('home', {
                 url: '/home',
                 templateUrl: 'js/components/home/home.tpl.html',
