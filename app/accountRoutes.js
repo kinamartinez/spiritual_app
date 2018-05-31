@@ -87,5 +87,35 @@ router.post('/addfood', (req, res, next) => {
     });
 });
 
+router.post('/updateJOurney', (req, res, next) => {
+
+    //const errors = req.validationErrors();
+
+    User.findById(req.user._id, (err, user) => {
+        // http://localhost:3000/users/currentUser
+        // console.log(req.user.id);
+        if (err) {
+            return next(err);
+        }
+        let currentJurney = req.body.index;
+        user.foods[currentJurney].dish = req.body.dish || '';
+         user.foods[currentJurney].description = req.body.description || '';
+ user.foods[currentJurney].price = req.body.price || '';
+  user.foods[currentJurney].type = req.body.type || '';
+   user.foods[currentJurney].img = req.body.img || '';
+  
+        user.save((err) => {
+            if (err) {
+                if (err.code === 11000) {
+                    // req.flash('errors', { msg: 'The email address you have entered is already associated with an account.' });
+                    return res.redirect('/myAccount');
+                }
+                return next(err);
+            }
+           req.flash('success', { msg: 'Profile information has been updated.' });
+            res.redirect('/myAccount');
+        });
+    });
+});
 
 module.exports = router;

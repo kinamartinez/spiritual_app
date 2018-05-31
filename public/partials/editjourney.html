@@ -1,35 +1,40 @@
-<div class="container">
-    <h2>New Entry</h2>
-    <form class="form-horizontal" action="account/addfood" method="POST">
-        <div class="form-group">
-            <label class="col-sm-3 control-label" for="dish">Journey</label>
-
+<h2>Edit youe entries:</h2>
+<div class="container" ng-repeat="Food in user.foods track by $index">
+    <form class="form-horizontal" action="account/updateJOurney" method="POST">
+        <div class="form-group" style="display:none;">
+            <label class="col-sm-3 control-label" for="index"></label>
             <div class="col-sm-7">
-                <input class="form-control" type="text" name="dish" id="dish" ng-model='Food.dish'>
+                <input class="form-control" type="text" name="index" value={{$index}}>
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-3 control-label" for="description" placeholder=" A short description of your journey">Description</label>
+            <label class="col-sm-3 control-label" for="dish">Journey</label>
             <div class="col-sm-7">
-                <input class="form-control" type="text" name="description" id="description" ng-model='Food.description'>
+                <input class="form-control" type="text" name="dish"  ng-model='Food.dish'>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="description">Description</label>
+            <div class="col-sm-7">
+                <input class="form-control" type="text" name="description" ng-model='Food.description'>
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-3 control-label" for="price">Story</label>
             <div class="col-sm-7">
-                <input class="form-control" type="text" name="price" id="price" ng-model='Food.price'>
+                <input class="form-control" type="text" name="price"  ng-model='Food.price'>
             </div>
         </div>
                 <div class="form-group">
                    <label class="col-sm-3 control-label" for="type">City</label>
             <div class="col-sm-7">
-                <input class="form-control" type="text" name="type" id="type" ng-model='Food.type'>
+                <input class="form-control" type="text" name="type"  ng-model='Food.type'>
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-3 control-label" for="img">Picture</label>
             <div class="col-sm-7">
-                <input class="form-control" type="text" name="img" id="img" ng-model='Food.img'>
+                <input class="form-control" type="text" name="img"  ng-model='Food.img'>
             </div>
         </div>
         <div class="form-group">
