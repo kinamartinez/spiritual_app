@@ -5,7 +5,11 @@ body {
     font-family: 'Arial', sans-serif;
 
 }
-
+@media only screen and (min-width: 1200px)  {
+    .container{
+        width: 1375px;
+    }
+}
 
 .main-container {
     margin-top: 60px;
@@ -243,7 +247,9 @@ body {
     margin: 20px 0;
 }
 
-
+.dividerProfile{
+    border-top-color: #dcdcdc;
+}
 /* Profile sidebar */
 
 .profile-sidebar {

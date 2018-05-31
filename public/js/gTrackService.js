@@ -20,7 +20,7 @@ angular.module('gTrackService', [])
             const directionsDisplay = new google.maps.DirectionsRenderer;
 
             const map = new google.maps.Map(document.getElementById('mapTrack'), {
-                zoom: 6,
+                zoom: 15,
                 center: {lat: user.latitude, lng: user.longitude},
             });
             directionsDisplay.setMap(map);
