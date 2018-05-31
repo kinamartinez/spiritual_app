@@ -150,6 +150,16 @@ body {
     max-width: 550px;
 }
 
+#map {
+    -webkit-box-shadow: 4px 10px 23px 0px rgba(112,91,112,1);
+    -moz-box-shadow: 4px 10px 23px 0px rgba(112,91,112,1);
+    box-shadow: 4px 10px 23px 0px rgba(112,91,112,1);
+}
+
+.form-group {
+    
+}
+
 /*.glyphicon-thumbs-down,
 .glyphicon-thumbs-up {
     cursor: pointer;
