@@ -366,17 +366,17 @@ body {
 }
 
 .home-btn:hover{
-    background-color: #097B96;
+    background-color: #27476e;
     color: white;
 
 }
+
 
 .content{
     padding-top: 28px;
 }
 
 .rightCol1 {
-
     float: right;
     margin-top: 10px;
 }
