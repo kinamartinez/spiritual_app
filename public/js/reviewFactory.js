@@ -8,6 +8,7 @@ app.factory('reviewFactory', function ($http) {
 
     reviewFactory.addReview = function (review, userId) {
         return $http.post('/review/' + userId, review)
+        console.log(review)
             .then(function (response) {
                 console.log("from the factory");
                 console.log(response);

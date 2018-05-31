@@ -13,10 +13,10 @@
                 <!-- SIDEBAR USER TITLE -->
                 <div class="profile-usertitle">
                     <div class="profile-usertitle-name">
-                        {{cook.fullname}}
+                        {{cook.fullname}}´s Journeys
                     </div>
-                    <div ng-repeat="food in user.foods track by $index" class="profile-usertitle-job">
-                        Type of Food: {{food.dish}}
+                    <div ng-repeat="food in cook.foods track by $index" class="profile-usertitle-job">
+                        Places: {{food.dish}}
                     </div>
                 </div>
                 <!-- END SIDEBAR USER TITLE -->
@@ -24,25 +24,9 @@
 
                 <div class="profile-userbuttons">
                     <p>{{cook.descrip}}</p>
-                    <p><strong> Phone Number: </strong>+972 ({{cook.phoneNumber}})</p>
-                    <p><strong> ({{cook.place}}) </strong></p>
-                    <p><strong> e-mail: {{cook.email}}</strong></p>
-
-                    <button ng-show="currentUser" type="button" ng-click="upvote(cook._id)"
-                            class="btn btn-success btn-sm glyphicon glyphicon-thumbs-up"> {{cook.upvotes}}
-                    </button>
-                    <button ng-show="currentUser" type="button" ng-click="downvote(cook._id)"
-                            class="btn btn-danger btn-sm glyphicon glyphicon-thumbs-down"> {{cook.downvotes}}
-                    </button>
-                    <button ng-show="!currentUser" type="button"
-                            class="btn btn-success btn-sm glyphicon glyphicon-thumbs-up"> {{cook.upvotes}}
-                    </button>
-                    <button ng-show="!currentUser" type="button"
-                            class="btn btn-danger btn-sm glyphicon glyphicon-thumbs-down"> {{cook.downvotes}}
-                    </button>
                     <br/>
                     <br/>
-                    <strong><a ng-show="currentUser" href="#reviewInput"> Leave a Review </a></strong>
+                    <strong><a ng-show="currentUser" href="#reviewInput"> Leave a comment </a></strong>
 
                 </div>
                 <!-- END SIDEBAR BUTTONS -->
@@ -181,7 +165,7 @@
             </div>
 
             <div class="col-md-12 profile-content">
-                <h2>REVIEWS</h2>
+                <h2>Coments</h2>
 
                 <!-- SIDEBAR MENU -->
 
@@ -208,9 +192,9 @@
                 <a name="reviewInput"></a>
                 <div class="profile-usermenu">
                     <form ng-show="currentUser">
-                        <h3 class="reevieews">Add a review</h3>
+                        <h3 class="reevieews">Add a comment</h3>
                         <div class="input-group">
-                            <input type="text" class="form-control" ng-model="review.text" placeholder="Add review...">
+                            <input type="text" class="form-control" ng-model="review.text" placeholder="Add a comment...">
                             <span class="input-group-btn">
                         <button class="btn btn-info" type="button" ng-click="addReview(review)">Submit</button>
                         </span>
