@@ -8,11 +8,13 @@ app.controller('reviewController', ['$scope', 'reviewFactory', 'relevantCook', '
 
     $scope.cook = relevantCook;
     console.log('relevantCook',relevantCook);
+    console.log("user", $scope.currentUser)
 
     $scope.addReview = function (review) {
+        
         const newReview = {
             text: review.text,
-            author: $scope.currentUser,
+            author: $scope.currentUser.username,
         };
         reviewFactory.addReview(newReview, $scope.cook._id)
             .then(function (reviews) {
