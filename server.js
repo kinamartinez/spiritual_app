@@ -12,7 +12,6 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 
-const FlashMessages = require('flash-messages');
 
 
 
@@ -55,9 +54,10 @@ app.use(expressSession({
 
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(FlashMessages.init);
 
-var User = require("./app/model");
+
+
+
 
 // Configure passport-local to use user model for authentication
 passport.use(User.createStrategy());
