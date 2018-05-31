@@ -16,6 +16,7 @@ const methodOverride = require('method-override');
 
 
 
+
 // Connect to database
 mongoose.connect(process.env.CONNECTION_STRING || "mongodb://localhost/trial5");
 
@@ -56,8 +57,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-
-
+var User = require("./app/model");
 
 // Configure passport-local to use user model for authentication
 passport.use(User.createStrategy());
