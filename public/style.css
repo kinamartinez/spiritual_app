@@ -7,7 +7,7 @@ body {
 }
 @media only screen and (min-width: 1200px)  {
     .container{
-        width: 1375px;
+        width: 1300px;
     }
 }
 
@@ -277,6 +277,9 @@ body {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 7px;
+}
+.prof-name{
+    text-transform: capitalize;
 }
 .reevieews{
     color: #5a7391;
