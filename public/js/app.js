@@ -5,6 +5,7 @@ var app = angular.module('meanMapApp', [
     'queryCtrl',
     'geolocation',
     'gservice',
+    'gTrackService',
 
 ]);
 
@@ -91,6 +92,8 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$provi
                 templateUrl: 'partials/map.html',
                 controller: 'queryCtrl',
             })
+
+
             .state('map.find', {
                 url: '/find',
                 templateUrl: 'partials/queryForm.html',
