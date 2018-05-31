@@ -1,0 +1,37 @@
+{
+  "env": {
+    "browser": true
+  },
+  "globals": {
+    "angular": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
+  "rules": {
+    "semi": ["error", "always"],
+    "comma-dangle": ["error", "always-multiline"],
+    "no-var": "error",
+    "prefer-const": ["error", {
+      "destructuring": "any",
+      "ignoreReadBeforeAssign": false
+    }],
+    "camelcase": 2,
+
+    "curly": 2,
+    "brace-style": [
+      2,
+      "1tbs"
+    ],
+    "quotes": [
+      2,
+      "single"
+    ],
+
+    "space-in-brackets": [
+      2,
+      "never"
+    ],
+    "space-infix-ops": 2
+  }
+}
