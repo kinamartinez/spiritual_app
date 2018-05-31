@@ -1,11 +1,11 @@
-"use strict";
+'use strict';
 
 app.controller('authCtrl', function($scope, authFactory, $state, $rootScope, geolocation, gservice) {
 
     $scope.user = {};
     let coords = {};
-    let lat = 0;
-    let long = 0;
+    const lat = 0;
+    const long = 0;
 
     // Set initial coordinates to the center of the Israel
     $scope.user.latitude = 32.074466;
@@ -22,7 +22,7 @@ app.controller('authCtrl', function($scope, authFactory, $state, $rootScope, geo
         $scope.user.longitude = parseFloat(coords.long).toFixed(3);
 
         // Display message confirming that the coordinates verified.
-        $scope.user.htmlverified = "Yep (Thanks for giving us real data!)";
+        $scope.user.htmlverified = 'Yep (Thanks for giving us real data!)';
 
         gservice.refresh($scope.user.latitude, $scope.user.longitude);
 
@@ -30,13 +30,13 @@ app.controller('authCtrl', function($scope, authFactory, $state, $rootScope, geo
 
     // Functions
     // Get coordinates based on mouse click. When a click event is detected....
-    $rootScope.$on("clicked", function() {
+    $rootScope.$on('clicked', function() {
 
         // Run the gservice functions associated with identifying coordinates
         $scope.$apply(function() {
             $scope.user.latitude = parseFloat(gservice.clickLat).toFixed(3);
             $scope.user.longitude = parseFloat(gservice.clickLong).toFixed(3);
-            $scope.formData.htmlverified = "Hey (You are not in this location...)";
+            $scope.formData.htmlverified = 'Hey (You are not in this location...)';
         });
     });
 
@@ -71,5 +71,5 @@ app.controller('authCtrl', function($scope, authFactory, $state, $rootScope, geo
             }, function(err) {
                 alert(err.data);
             });
-    }
+    };
 });
