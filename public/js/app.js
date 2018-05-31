@@ -47,29 +47,22 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$provi
                 controller: 'reviewController',
                 resolve: {
 
-                    relevantCook: ['authFactory', '$stateParams', '$http', function (authFactory, $stateParams, $http) {
-                        const userId = $stateParams.id;
-                        console.log('getting review from: ', '/review/' + userId);
-                        return $http.get('/review/' + userId).then(function (theWholeUserObj) {
-                            console.log('the next obj comes from app.js - Profile State');
+
+                    relevantCook: ["authFactory", "$stateParams", "$http", function (authFactory, $stateParams, $http) {
+                        let userId = $stateParams.id;
+                        console.log("getting review from: ", "/review/" + userId);
+                        return $http.get("/review/" + userId).then(function (theWholeUserObj) {
+                            // console.log("the next obj comes from app.js - Profile State");
+                            // console.log(theWholeUserObj.data);
+                            console.log("this is the users data from appjs");
                             console.log(theWholeUserObj.data);
-                            console.log('this is the users reviews');
-                            console.log(theWholeUserObj.data.reviews);
                             return theWholeUserObj.data;
-                        });
-                    }],
+                        })
+                    }]
+                }
 
-                },
             })
 
-
-            .state('orderForm', {
-                url: '/orderForm',
-                controller: 'foodController',
-                templateUrl: 'partials/orderForm.html',
-
-                // All else forward to the Join Home Cook Team Control Panel
-            })
             .state('home', {
                 url: '/home',
                 templateUrl: 'js/components/home/home.tpl.html',
@@ -83,6 +76,12 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$provi
             .state('account.addFood', {
                 url: '/addFood',
                 templateUrl: 'partials/addFood.html',
+
+                // All else forward to the Join Home Cook Team Control Panel
+            })
+            .state('account.editJourney', {
+                url: '/editJourney',
+                templateUrl: 'partials/editjourney.html',
 
                 // All else forward to the Join Home Cook Team Control Panel
             })
