@@ -112,7 +112,7 @@ router.post('/updateJOurney', (req, res, next) => {
                 }
                 return next(err);
             }
-           req.flash('success', { msg: 'Profile information has been updated.' });
+          // req.flash('success', { msg: 'Profile information has been updated.' });
             res.redirect('/myAccount');
         });
     });

@@ -59,12 +59,13 @@
         </div>
 
         <ul class="nav navbar-nav navbar-right" ng-show='currentUser'>
+            
+            <li class="navbar-text"><a ui-sref="addJourney">Write</a></li>
             <li class="navbar-text"><a ui-sref="account">Welcome {{currentUser.username}} !</a></li>
             <li class="navbar-text"><a target="_self" href="/users/logout">Logout</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-left" ng-show='currentUser'>
-            <li><a ui-sref="map.list">What's on the menu?</a></li>
-            <li><a ui-sref="map.find">Find some cooks</a></li>
+            <li><a ui-sref="map.list">Discover</a></li>
             <li><a ui-sref="aboutUs">About</a></li>
         </ul>
 
@@ -72,11 +73,8 @@
         <ul class="nav navbar-nav navbar-right" ng-hide='currentUser'>
             <li><a ui-sref="aboutUs">About</a></li>
             <li><a ui-sref="map.list">Discover</a></li>
-            <li><a ui-sref="map.join">Write you Story</a></li>
+            <li><a ui-sref="map.join">Write you story</a></li>
             <li><a ui-sref="login">Login</a></li>
-            <li><a ui-sref="register" class="navbar-reg"> Register </a></li>
-
-
         </ul>
 
     </div>

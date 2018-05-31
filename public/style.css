@@ -224,12 +224,6 @@ body {
  box-shadow: 10px 10px 5px 0px rgba(168,161,168,1);
 }
 
-.panel-body {
- -webkit-box-shadow: 10px 10px 5px 0px rgba(168,161,168,1);
- -moz-box-shadow: 10px 10px 5px 0px rgba(168,161,168,1);
- box-shadow: 10px 10px 5px 0px rgba(168,161,168,1);
-
-}
 
 /* Profile container */
 
@@ -339,6 +333,9 @@ body {
 
 
 /* Profile Content */
+#price, textarea {
+    height: 270px !important;
+}
 
 .profile-content {
     padding: 20px;
