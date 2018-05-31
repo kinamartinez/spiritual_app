@@ -4,7 +4,7 @@ var app = angular.module('meanMapApp', [
     'addCtrl',
     'queryCtrl',
     'geolocation',
-    'gservice'
+    'gservice',
 
 ]);
 
@@ -35,10 +35,10 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$provi
                     users: function ($http) {
                         return $http.get('/users')
                             .catch(function (err) {
-                                console.log(err)
+                                console.log(err);
                             }); // post es la ruta que le dimos en el server.js
-                    }
-                }
+                    },
+                },
                 // All else forward to the Join Home Cook Team Control Panel
             })
             .state('profile', {
@@ -47,29 +47,22 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$provi
                 controller: 'reviewController',
                 resolve: {
 
+
                     relevantCook: ["authFactory", "$stateParams", "$http", function (authFactory, $stateParams, $http) {
                         let userId = $stateParams.id;
                         console.log("getting review from: ", "/review/" + userId);
                         return $http.get("/review/" + userId).then(function (theWholeUserObj) {
                             // console.log("the next obj comes from app.js - Profile State");
                             // console.log(theWholeUserObj.data);
-                            // console.log("this is the users reviews");
-                            // console.log(theWholeUserObj.data.reviews);
+                            console.log("this is the users data from appjs");
+                            console.log(theWholeUserObj.data);
                             return theWholeUserObj.data;
                         })
                     }]
-
                 }
+
             })
 
-
-            .state('orderForm', {
-                url: '/orderForm',
-                controller: 'foodController',
-                templateUrl: 'partials/orderForm.html',
-
-                // All else forward to the Join Home Cook Team Control Panel
-            })
             .state('home', {
                 url: '/home',
                 templateUrl: 'js/components/home/home.tpl.html',
@@ -86,27 +79,33 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$provi
 
                 // All else forward to the Join Home Cook Team Control Panel
             })
+            .state('account.editJourney', {
+                url: '/editJourney',
+                templateUrl: 'partials/editjourney.html',
+
+                // All else forward to the Join Home Cook Team Control Panel
+            })
 
             .state('map', {
                 url: '/map',
                 templateUrl: 'partials/map.html',
-                controller: 'queryCtrl'
+                controller: 'queryCtrl',
             })
             .state('map.find', {
                 url: '/find',
                 templateUrl: 'partials/queryForm.html',
-                controller: 'authCtrl'
+                controller: 'authCtrl',
                 // All else forward to the Join Home Cook Team Control Panel
             })
             .state('register', {
                 url: '/register',
                 templateUrl: '/partials/userRegistration.html',
-                controller: 'authCtrl'
+                controller: 'authCtrl',
             })
             .state('login', {
                 url: '/login',
                 templateUrl: '/partials/login.html',
-                controller: 'authCtrl'
+                controller: 'authCtrl',
             })
             .state('account', {
                 url: '/myAccount',
@@ -118,12 +117,12 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$provi
                         return $http.get('/account/updateProfile')
                             .catch(function (err) {
                                 console.log('yes i am');
-                                $state.go('home')
-                            })
-                    }
-                }
+                                $state.go('home');
+                            });
+                    },
+                },
             });
 
         $urlRouterProvider.otherwise('/home');
-    }
+    },
 ]);

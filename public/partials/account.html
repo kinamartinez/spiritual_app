@@ -58,9 +58,13 @@
         </div>
     </form>
     <div class="page-header" ng-show="user.cook">
-        <a ui-sref="account.addFood">
-            <h3 class="text-center">Add food</h3>
+        <a ui-sref="account.addFood" >
+            <h3 class="text-center">Add a place to your journey</h3>
         </a>
+        <a ui-sref="account.editJourney">
+            <h3 class="text-center">Edit your journeys </h3>
+        </a>
+        
         <ui-view></ui-view>
     </div>
     <div class="page-header">
