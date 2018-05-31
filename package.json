@@ -11,7 +11,7 @@
   "dependencies": {
     "angular": "^1.7",
     "angular-animate": "^1.7",
-    "angular-aria": "^1.7",
+    "angular-aria": "^1.7git ",
     "angular-jwt": "^0.1.9",
     "angular-lock": "^2.0.2",
     "angular-material": "^1.1.4",

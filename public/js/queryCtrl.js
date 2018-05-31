@@ -5,7 +5,7 @@ angular.module('queryCtrl', ['geolocation', 'gservice'])
         // Initializes Variables
         // ----------------------------------------------------------------------------
         $scope.formData = {};
-        var queryBody = {};
+        let queryBody = {};
 
 
         // Functions
@@ -21,7 +21,7 @@ angular.module('queryCtrl', ['geolocation', 'gservice'])
         });
 
         // Get coordinates based on mouse click. When a click event is detected....
-        $rootScope.$on("clicked", function() {
+        $rootScope.$on('clicked', function() {
 
             // Run the gservice functions associated with identifying coordinates
             $scope.$apply(function() {
@@ -40,7 +40,7 @@ angular.module('queryCtrl', ['geolocation', 'gservice'])
                 distance: parseFloat($scope.formData.distance),
                 favlang: $scope.formData.favlang,
                 reqVerified: $scope.formData.verified,
-                cook: true
+                cook: true,
 
             };
 
@@ -60,14 +60,14 @@ angular.module('queryCtrl', ['geolocation', 'gservice'])
 
                     // Count the number of records retrieved for the panel-footer
                     $scope.queryCount = queryResults.length;
-                    console.log("QueryCount:");
+                    console.log('QueryCount:');
                     console.log(queryResults.length);
                     $scope.queryCount2 = queryResults;
-                    console.log("QueryCount2:");
+                    console.log('QueryCount2:');
                     console.log($scope.queryCount2);
                 })
                 .error(function(queryResults) {
                     console.log('Error ' + queryResults);
-                })
+                });
         };
     });

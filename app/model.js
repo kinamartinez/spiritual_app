@@ -11,7 +11,7 @@ var availabilitySchema = new Schema({
 var FoodSchema = new Schema({
     dish: { type: String },
     description: { type: String },
-    price: { type: Number },
+    price: { type: String },
     type: { type: String },
     img: { type: String },
     options: { type: String },
