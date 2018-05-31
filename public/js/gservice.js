@@ -1,5 +1,5 @@
-"use strict";
-
+// 'use strict';
+//
 // Creates the gservice factory.
 // This will be the primary means of interaction with Google Maps
 
@@ -10,14 +10,14 @@ angular.module('gservice', [])
         // Initialize Variables
         // ---------------------------------------------------
         // Service our factory will return
-        var googleMapService = {};
+        const googleMapService = {};
 
         // Array of locations obtained from API calls
-        var locations = [];
+        let locations = [];
 
         // Selected location (initialize to center of Israel)
-        var defaultLat = 32.074466;
-        var defaultLng = 34.791598;
+        const defaultLat = 32.074466;
+        const defaultLng = 34.791598;
 
         // Handling clicks and location selection
         googleMapService.clickLat = 0;
@@ -76,22 +76,22 @@ angular.module('gservice', [])
         var convertToMapPoints = function (response) {
 
             // Clear the locations holder
-            var locations = [];
+            const locations = [];
 
             // Loop through all of the JSON entries provided
             // as response of call to API
             console.log(response);
-            for (var i = 0; i < response.length; i++) {
+            for (let i = 0; i < response.length; i++) {
 
-                var user = response[i];
+                const user = response[i];
 
-                console.log("adding location:", user.latitude, user.longitude);
+                console.log('adding location:', user.latitude, user.longitude);
 
                 // Create popup windows for each record
-                var contentString =
+                const contentString =
                     '<p><b>Username</b>: ' + user.username +
                     '<br><b>Email</b>: ' + user.email +
-                    '<br><a href="/map/list">Find me on the menu</a>'+
+                    '<br><a href="/map/list">Find me on the menu</a>' +
                 '</p>';
 
                 // Converts each of the JSON records into Google Maps
@@ -102,7 +102,7 @@ angular.module('gservice', [])
                     latlon: new google.maps.LatLng(user.latitude, user.longitude),
                     message: new google.maps.InfoWindow({
                         content: contentString,
-                        maxWidth: 320
+                        maxWidth: 320,
                     }),
                     username: user.username,
                     // gender: user.gender,
@@ -114,19 +114,19 @@ angular.module('gservice', [])
             } // end for loop over users
 
             // location is now an array populated with records in Google Maps format
-            return locations
+            return locations;
 
         }; // end convertToMapPoints function definition
 
         // Initializes the map
-        var map;
+        let map;
 
         var initialize = function (latitude, longitude, filter) {
 
             console.log(`initialize(${latitude}, ${longitude}, ${filter})`);
 
             // Uses the selected lat, long as a starting point
-            var myLatLong = {lat: latitude, lng: longitude};
+            let myLatLong = {lat: latitude, lng: longitude};
             myLatLong = new google.maps.LatLng(parseFloat(latitude), parseFloat(longitude));
 
             // If map has not been created already ...
@@ -135,7 +135,7 @@ angular.module('gservice', [])
                 // Create a new map and place it in the index.html page
                 var map = new google.maps.Map(document.getElementById('map'), {
                     zoom: 15,
-                    center: myLatLong
+                    center: myLatLong,
                 });
 
             } // end if(!map)
@@ -155,11 +155,11 @@ angular.module('gservice', [])
             // Loop through each location in the array and place a marker
             locations.forEach(function (n, i) {
 
-                var marker = new google.maps.Marker({
+                const marker = new google.maps.Marker({
                     position: n.latlon,
                     map: map,
-                    title: "Big Map",
-                    icon: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+                    title: 'Big Map',
+                    icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
                 });
 
                 // For each marker created, add a listener that checks for clicks
@@ -174,26 +174,26 @@ angular.module('gservice', [])
             }); // end locations.forEach(function(...))
 
             // Bouncing red marker logic
-            var initialLocation = new google.maps.LatLng(latitude, longitude);
-            var marker = new google.maps.Marker({
+            const initialLocation = new google.maps.LatLng(latitude, longitude);
+            const marker = new google.maps.Marker({
                 position: initialLocation,
                 animation: google.maps.Animation.BOUNCE,
                 map: map,
-                icon: "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
+                icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
             });
 
-            var lastMarker = marker;
+            let lastMarker = marker;
 
             // Function for moving to a selected location
             map.panTo(new google.maps.LatLng(latitude, longitude));
 
             // Clicking on the Map moves the bouncing red marker
             google.maps.event.addListener(map, 'click', function (e) {
-                var marker = new google.maps.Marker({
+                const marker = new google.maps.Marker({
                     position: e.latLng,
                     animation: google.maps.Animation.BOUNCE,
                     map: map,
-                    icon: "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
+                    icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
 
                 });
 
