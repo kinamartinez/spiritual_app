@@ -321,6 +321,9 @@ body {
 
 
 /* Profile Content */
+#price, textarea {
+    height: 270px !important;
+}
 
 .profile-content {
     padding: 20px;
