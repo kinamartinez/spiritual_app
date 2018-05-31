@@ -74,12 +74,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$provi
                 templateUrl: 'partials/aboutUs.html',
             })
 
-            .state('account.addFood', {
-                url: '/addFood',
-                templateUrl: 'partials/addFood.html',
 
-                // All else forward to the Join Home Cook Team Control Panel
-            })
             .state('account.editJourney', {
                 url: '/editJourney',
                 templateUrl: 'partials/editjourney.html',
@@ -109,6 +104,22 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$provi
                 url: '/login',
                 templateUrl: '/partials/login.html',
                 controller: 'authCtrl',
+            })
+            .state('addJourney', {
+                url: '/addJourney',
+                templateUrl: 'partials/addFood.html',
+                controller: 'accountCtrl',
+                resolve: {
+                    myData: function ($http, $state) {
+                        console.log('yup');
+                        return $http.get('/account/updateProfile')
+                            .catch(function (err) {
+                                console.log('yes i am');
+                                $state.go('home');
+                            });
+                    },
+                },
+                // All else forward to the Join Home Cook Team Control Panel
             })
             .state('account', {
                 url: '/myAccount',
