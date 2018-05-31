@@ -2,7 +2,8 @@
  * Created by karina on 02/05/17.
  */
 'use strict';
-app.controller('reviewController', ['$scope', 'reviewFactory', 'relevantCook', '$http', 'authFactory', function ($scope, reviewFactory, relevantCook, $http, authFactory) {
+app.controller('reviewController', ['$scope', 'reviewFactory', 'relevantCook', '$http', 'authFactory', 'gTrackService',
+    function ($scope, reviewFactory, relevantCook, $http, authFactory, gTrackService) {
 
 
     $scope.cook = relevantCook;
@@ -49,5 +50,6 @@ app.controller('reviewController', ['$scope', 'reviewFactory', 'relevantCook', '
             });
     };
 
+    gTrackService.initMap($scope.cook);
 
 }]);
