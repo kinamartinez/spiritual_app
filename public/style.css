@@ -443,7 +443,9 @@ img{
     margin-left:-200px;
 }
 
-
+.about_row {
+    margin-left: 30px;
+}
 
 #aboutus {
     font-weight: 700;
@@ -451,10 +453,11 @@ img{
 }
 
 .about{
-    max-width: 282px;
+    max-width: 415px;
     margin: 0 5px 20px 5px;
     padding-top: 19px;
 }
+
 
 .desc{
     text-align: center;
