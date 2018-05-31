@@ -43,13 +43,14 @@ angular.module('gTrackService', [])
                 });
             }
             const endPoint = waypts[waypts.length - 1];
-            console.log('endPoint', endPoint);
+            console.log('endPoint', endPoint.location);
+            console.log('arrayOfWayPoints', waypts)
             // let varee = use.foods.length -
             // lugares = for loop de foods.places - last
 
             directionsService.route({
                 origin: {lat: startLatPoint, lng: startLngPoint},
-                destination: endPoint,
+                destination: endPoint.location,
                 waypoints: waypts,
                 optimizeWaypoints: true,
                 travelMode: 'DRIVING',
