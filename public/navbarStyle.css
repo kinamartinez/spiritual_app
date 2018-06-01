@@ -64,3 +64,17 @@ body {
     transition: 0.8s;
     -webkit-transition: 0.8s;
 }
+
+#navbarDropdown{
+    width: 159px;
+    text-align: center;
+}
+.itemDropDown{
+    color: #808080 !important;
+    line-height: 2.5;
+    padding-left: 22px;
+}
+.nav.open>a{
+    background-color: #eeeeee63;
+    border-color: #337ab7;
+}

@@ -1,4 +1,5 @@
-<h2>Edit your entries:</h2>
+<div class="container-edit">
+<h3 class="profileTitle editTitle">Edit your entries:</h3>
 <div class="container" ng-repeat="Food in user.foods track by $index">
     <form class="form-horizontal" action="account/updateJOurney" method="POST">
         <div class="form-group" style="display:none;">
@@ -39,8 +40,9 @@
         </div>
         <div class="form-group">
             <div class="col-sm-offset-3 col-sm-4">
-                <button class="btn btn btn-primary" type="submit"><i class="fa fa-pencil"></i>Submit</button>
+                <button class="btn btn saveProfile" type="submit">Save</button>
             </div>
         </div>
     </form>
+</div>
 </div>
