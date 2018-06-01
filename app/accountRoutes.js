@@ -99,10 +99,10 @@ router.post('/updateJOurney', (req, res, next) => {
         }
         let currentJurney = req.body.index;
         user.foods[currentJurney].dish = req.body.dish || '';
-         user.foods[currentJurney].description = req.body.description || '';
- user.foods[currentJurney].price = req.body.price || '';
-  user.foods[currentJurney].type = req.body.type || '';
-   user.foods[currentJurney].img = req.body.img || '';
+        user.foods[currentJurney].description = req.body.description || '';
+        user.foods[currentJurney].price = req.body.price || '';
+        user.foods[currentJurney].type = req.body.type || '';
+        user.foods[currentJurney].img = req.body.img || '';
   
         user.save((err) => {
             if (err) {
@@ -113,7 +113,7 @@ router.post('/updateJOurney', (req, res, next) => {
                 return next(err);
             }
           // req.flash('success', { msg: 'Profile information has been updated.' });
-            res.redirect('/myAccount');
+            res.redirect('/profile/'+ user._id);
         });
     });
 });
