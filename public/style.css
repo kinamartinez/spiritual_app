@@ -2,7 +2,7 @@ html,
 body {
     height: 100%;
     width: 100%;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
 
 }
 @media only screen and (min-width: 1200px)  {
@@ -161,7 +161,7 @@ body {
 }
 
 .form-group {
-    
+
 }
 
 /*.glyphicon-thumbs-down,
@@ -223,20 +223,21 @@ body {
 /*marina changes*/
 
 #map {
- -webkit-box-shadow: 10px 10px 5px 0px rgba(168,161,168,1);
- -moz-box-shadow: 10px 10px 5px 0px rgba(168,161,168,1);
- box-shadow: 10px 10px 5px 0px rgba(168,161,168,1);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(168,161,168,1);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(168,161,168,1);
+    box-shadow: 10px 10px 5px 0px rgba(168,161,168,1);
 }
 
 .panel-body {
- -webkit-box-shadow: 10px 10px 5px 0px rgba(168,161,168,1);
- -moz-box-shadow: 10px 10px 5px 0px rgba(168,161,168,1);
- box-shadow: 10px 10px 5px 0px rgba(168,161,168,1);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(168,161,168,1);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(168,161,168,1);
+    box-shadow: 10px 10px 5px 0px rgba(168,161,168,1);
 
 }
 
 .journey-container{
     margin-top: 80px;
+    background-color: white;
 }
 
 
@@ -459,6 +460,7 @@ img{
     max-width: 400px;
     margin: 0 5px 20px 5px;
     padding-top: 19px;
+    height: 330px;
 }
 
 
@@ -475,4 +477,91 @@ img{
     background-color: white;
     padding: 15px;
     min-width: 600px;
+}
+.findJourneysBtn{
+    font-size: 20px;
+    font-weight: bold;
+    color: #3379b7;
+}
+
+.profileTitle{
+    background-image: url(images/profileBackground.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-size: 45px;
+    font-weight: bold;
+    padding-top: 46px;
+    height: 164px;
+}
+
+.newEntryTitle{
+    background-image: url(images/newEntry.jpg);
+     text-align: center;
+}
+.editTitle{
+    background-image: url(images/editForm.jpg);
+    text-align: center;
+}
+.containerProfileInfo{
+    background-color: white;
+}
+
+.control-label{
+    font-size: 15px;
+    color: #808080;
+    line-height: 1.2;
+}
+.form-control{
+    border: none;
+    border-bottom: 1px solid #bcbbbb;
+    border-radius: 0;
+    box-shadow: none;
+
+    background: transparent;
+}
+
+.saveProfile{
+    width: 160px;
+    height: 32px;
+    border-radius: 2px;
+    background-color: #f10037;
+    border: solid 1px #bcbbbb;
+    color: white;
+    float: right;
+    margin-right: -26px;
+}
+.page-header{
+    border-bottom: none;
+}
+/* show the collapse when navbar toggle is checked */
+#navbar-toggle-cbox:checked ~ .collapse {
+    display: block;
+}
+
+/* the checkbox used only internally; don't display it */
+#navbar-toggle-cbox {
+    display:none
+}
+.itemDropDown{
+    color: black !important;
+}
+.popupEdit{
+
+    position: absolute;
+    z-index: 10000;
+
+    width: 1147px;
+    margin-left: 50px;
+    margin-top: -400px;
+}
+.container-edit{
+    background: lightgray;
+}
+
+.paddSubTitles{
+    padding-left: 50px;
+    box-shadow: none;
+    text-shadow: none;
+    color: #808080;
 }
