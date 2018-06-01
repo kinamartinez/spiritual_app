@@ -86,12 +86,12 @@ angular.module('gservice', [])
                 const user = response[i];
 
                 console.log('adding location:', user.latitude, user.longitude);
-
+                const userId= '"/profile/' + user._id +'"'
                 // Create popup windows for each record
                 const contentString =
                     '<p><b>Username</b>: ' + user.username +
                     '<br><b>Description</b>: ' + user.descrip +
-                    '<br><a href="/profile/"+ user._id>Look my profile!</a>' +
+                    '<br><a href=' + userId + '  >Look my profile!</a>' +
                     '</p>';
 
                 // Converts each of the JSON records into Google Maps
