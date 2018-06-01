@@ -103,7 +103,10 @@ router.post('/updateJOurney', (req, res, next) => {
         user.foods[currentJurney].price = req.body.price || '';
         user.foods[currentJurney].type = req.body.type || '';
         user.foods[currentJurney].img = req.body.img || '';
-  
+        console.log('****img rqe****');
+        console.log(req.body.img );
+        console.log('****img curre****');
+        console.log(user.foods[currentJurney].img);
         user.save((err) => {
             if (err) {
                 if (err.code === 11000) {
