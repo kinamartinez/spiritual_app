@@ -91,6 +91,7 @@ angular.module('gservice', [])
                 const contentString =
                     '<p><b>Username</b>: ' + user.username +
                     '<br><b>Description</b>: ' + user.descrip +
+                    '<br><a href="/profile/"+ user._id>Look my profile!</a>' +
                     '</p>';
 
                 // Converts each of the JSON records into Google Maps
