@@ -324,13 +324,13 @@ section {
 
 .profile-usermenu ul li a {
     color: #93a3b5;
-    font-size: 14px;
+    font-size: 17px;
     font-weight: 400;
 }
 
 .profile-usermenu ul li a i {
     margin-right: 8px;
-    font-size: 14px;
+    font-size: 17px;
 }
 
 .profile-usermenu ul li a:hover {
@@ -423,7 +423,7 @@ h4 {
 h5 {
     padding: 0;
     margin: 0px 0 5px 5px;
-    font-size: 14px;
+    font-size: 17px;
     font-weight: 400;
     color: black;
 }
