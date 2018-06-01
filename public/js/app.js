@@ -49,18 +49,18 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$provi
                 resolve: {
 
 
-                    relevantCook: ["authFactory", "$stateParams", "$http", function (authFactory, $stateParams, $http) {
-                        let userId = $stateParams.id;
-                        console.log("getting review from: ", "/review/" + userId);
-                        return $http.get("/review/" + userId).then(function (theWholeUserObj) {
+                    relevantCook: ['authFactory', '$stateParams', '$http', function (authFactory, $stateParams, $http) {
+                        const userId = $stateParams.id;
+                        console.log('getting review from: ', '/review/' + userId);
+                        return $http.get('/review/' + userId).then(function (theWholeUserObj) {
                             // console.log("the next obj comes from app.js - Profile State");
                             // console.log(theWholeUserObj.data);
-                            console.log("this is the users data from appjs");
+                            console.log('this is the users data from appjs');
                             console.log(theWholeUserObj.data);
                             return theWholeUserObj.data;
-                        })
-                    }]
-                }
+                        });
+                    }],
+                },
 
             })
 
